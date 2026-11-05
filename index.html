@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>James Tran · Projects</title>
+  <meta name="description" content="Software projects by James Tran: desktop, web and mobile apps, on-device AI, and 3D data visualisation.">
+  <meta property="og:title" content="James Tran · Projects">
+  <meta property="og:description" content="Desktop, web and mobile apps, on-device AI, and 3D data visualisation.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%231d5fd1'/><text x='16' y='22' font-family='system-ui' font-size='15' font-weight='700' fill='white' text-anchor='middle'>JT</text></svg>">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip" href="#projects">Skip to projects</a>
+
+  <header class="hero">
+    <div class="wrap">
+      <p class="eyebrow">Software developer</p>
+      <h1>James Tran</h1>
+      <p class="lede">
+        I build desktop, web and mobile apps, often around on-device AI and 3D visualisation.
+        Below are selected projects from 2026, with the stack and what each one does.
+      </p>
+      <nav class="contact" aria-label="Contact">
+        <a href="https://github.com/quantumArc">GitHub</a>
+        <!-- Add your contact links here, for example:
+        <a href="mailto:you@example.com">Email</a>
+        <a href="https://www.linkedin.com/in/your-profile">LinkedIn</a>
+        <a href="resume.pdf">Resume (PDF)</a>
+        -->
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="skills" aria-labelledby="skills-h">
+      <h2 id="skills-h">Skills used across these projects</h2>
+      <dl>
+        <div><dt>Languages</dt><dd>TypeScript, JavaScript, Python, Rust, Swift, SQL</dd></div>
+        <div><dt>Front end</dt><dd>React, Next.js, React Native, Expo, Vite, Tailwind CSS</dd></div>
+        <div><dt>3D &amp; graphics</dt><dd>Three.js, React Three Fiber, CesiumJS, Canvas, SVG, WebGPU</dd></div>
+        <div><dt>AI / ML</dt><dd>ONNX Runtime, KataGo, llama.cpp, Whisper, Qwen3-ASR, Gemma</dd></div>
+        <div><dt>Back end &amp; data</dt><dd>Node.js, Express, PostgreSQL, SQLite, WebSockets, REST APIs</dd></div>
+        <div><dt>Desktop &amp; deploy</dt><dd>Tauri, PyInstaller, Docker, GitHub Actions, Cloudflare, Netlify, Vercel</dd></div>
+      </dl>
+    </section>
+
+    <section id="projects" aria-labelledby="projects-h">
+      <div class="section-head">
+        <h2 id="projects-h">Projects</h2>
+        <div class="filters" role="group" aria-label="Filter projects">
+          <button type="button" class="chip is-on" data-filter="all" aria-pressed="true">All</button>
+          <button type="button" class="chip" data-filter="ai" aria-pressed="false">AI / ML</button>
+          <button type="button" class="chip" data-filter="web" aria-pressed="false">Web</button>
+          <button type="button" class="chip" data-filter="mobile" aria-pressed="false">Mobile</button>
+          <button type="button" class="chip" data-filter="desktop" aria-pressed="false">Desktop</button>
+          <button type="button" class="chip" data-filter="3d" aria-pressed="false">3D &amp; data viz</button>
+        </div>
+      </div>
+
+      <!-- Acupuncture Practice Management App -->
+      <article class="project" data-tags="web">
+        <header>
+          <h3>Acupuncture Practice Manager <span class="sub">Full-stack clinic management system</span></h3>
+          <p class="when">Feb – Oct 2026</p>
+        </header>
+        <ul class="points">
+          <li>Built a practice management system for an acupuncture clinic, with an appointment calendar, client records, treatment notes, and PDF invoices that meet Australian private health fund, TAC and WorkSafe claim requirements.</li>
+          <li>Protected health and banking data with AES-256-GCM encryption of treatment notes and bank details, locked note revisions, revocable sessions, two-step login with TOTP (implemented from RFC 6238), trusted devices, and admin, practitioner and reception roles with an audit log.</li>
+          <li>Added online new-patient intake and consent forms, emailed receipts, expense tracking, BAS and practice reports, and versioned sync between local and hosted PostgreSQL databases.</li>
+          <li>Runs 20 test suites with Node's test runner in GitHub Actions CI, alongside the production build and an npm security audit. Deployment set up for Supabase, Render and Vercel.</li>
+        </ul>
+        <ul class="stack">
+          <li>React</li><li>Vite</li><li>Tailwind CSS</li><li>Node.js</li><li>Express</li><li>PostgreSQL</li><li>PDFKit</li><li>Nodemailer</li><li>GitHub Actions</li>
+        </ul>
+        <footer>
+          <a class="live" href="https://acupuncture-practice-management-app.vercel.app/">Live site (login required)</a>
+        </footer>
+      </article>
+
+      <!-- Aji -->
+      <article class="project" data-tags="desktop ai 3d">
+        <header>
+          <h3>Aji <span class="sub">Desktop app for analysing Go games</span></h3>
+          <p class="when">Oct – Nov 2026</p>
+        </header>
+        <ul class="points">
+          <li>Built a macOS app for reviewing and playing Go with the KataGo AI engine, split into three processes: a Tauri (Rust) window, a Python game core started from KaTrain's, and a React + TypeScript interface.</li>
+          <li>Designed a typed JSON protocol over a token-protected localhost WebSocket, so all game logic stays in the core and another interface could reuse it unchanged.</li>
+          <li>Wrote an analysis scheduler that searches the on-screen position first and pauses background work, and added AI opponents, game reports, tsumego training and a searchable SGF game library.</li>
+          <li>Built an on-demand 3D board in three.js with procedurally generated wood grain, and bundled Python, the core and KataGo into a standalone app with PyInstaller.</li>
+        </ul>
+        <ul class="stack">
+          <li>Tauri 2</li><li>Rust</li><li>Python</li><li>React 19</li><li>TypeScript</li><li>three.js</li><li>WebSockets</li><li>pytest</li><li>Vitest</li>
+        </ul>
+        <footer>
+          <span class="private">Source available on request</span>
+        </footer>
+      </article>
+
+      <!-- Aji Web -->
+      <article class="project" data-tags="web ai 3d">
+        <header>
+          <h3>Aji Web <span class="sub">KataGo running entirely in the browser</span></h3>
+          <p class="when">Nov 2026</p>
+        </header>
+        <ul class="points">
+          <li>Ported Aji to a static website that runs KataGo's neural network on the player's own device through ONNX Runtime Web, on the GPU (WebGPU) or the CPU (WebAssembly), with no server.</li>
+          <li>Reimplemented KataGo's board rules, ladder reading, network inputs and tree search in TypeScript, and wrote a converter from KataGo network files to ONNX, including transformer-attention models.</li>
+          <li>Checked it against desktop KataGo: the small network matches to 4 decimal places on 15 test positions, and search win rates agree within about 1%.</li>
+          <li>Includes 900 tsumego problems, SGF open and save, and a phone layout that can be installed to the home screen. Deployed on Cloudflare Pages.</li>
+        </ul>
+        <ul class="stack">
+          <li>TypeScript</li><li>React</li><li>ONNX Runtime Web</li><li>WebGPU</li><li>WebAssembly</li><li>Python</li><li>Vitest</li><li>Cloudflare Pages</li>
+        </ul>
+        <footer>
+          <a class="live" href="https://aji-go.pages.dev">Live site</a>
+        </footer>
+      </article>
+
+      <!-- Live Translate -->
+      <article class="project" data-tags="ai web">
+        <header>
+          <h3>Live Translate <span class="sub">Real-time local speech translation</span></h3>
+          <p class="when">Sep 2026</p>
+        </header>
+        <ul class="points">
+          <li>Built a captioning app that captures audio from a browser tab, transcribes it with local speech-recognition models and translates it into English with a local Gemma 4 LLM. Audio never leaves the computer.</li>
+          <li>Streamed 16 kHz audio from an AudioWorklet over a WebSocket gateway to six swappable speech-recognition pipelines (SenseVoice, Whisper Large v3, Qwen3-ASR, ReazonSpeech, Kushinada) with voice-activity detection.</li>
+          <li>Shows partial captions that update while someone is speaking, then a final translation after each pause. Translation is served by llama.cpp, and every model service listens only on localhost.</li>
+        </ul>
+        <ul class="stack">
+          <li>TypeScript</li><li>React Native Web</li><li>Node.js</li><li>WebSockets</li><li>Web Audio</li><li>Python</li><li>sherpa-onnx</li><li>llama.cpp</li>
+        </ul>
+        <footer>
+          <span class="private">Source available on request</span>
+        </footer>
+      </article>
+
+      <!-- Planet Earth -->
+      <article class="project" data-tags="web 3d">
+        <header>
+          <h3>Planet Earth <span class="sub">3D globe of live weather, oceans and events</span></h3>
+          <p class="when">Oct 2026</p>
+        </header>
+        <ul class="points">
+          <li>Built a 3D Earth explorer in React, TypeScript and CesiumJS that layers public data from NOAA, NASA, ECMWF, DWD and USGS: weather, radar, lightning, cyclones, earthquakes, ocean temperature and currents. No API keys needed.</li>
+          <li>Animated global wind from ECMWF open data on a 0.5° grid (259,920 points), decoded by a Python service, and kept every weather layer on one shared clock.</li>
+          <li>Added a Time Explorer for replaying past dates, a side-by-side satellite date comparison, and 547 NASA-catalogued eclipses from 1980 to 2100 with calculated shadow paths.</li>
+          <li>Packaged as a single Docker image that deploys as a Hugging Face Space.</li>
+        </ul>
+        <ul class="stack">
+          <li>React</li><li>TypeScript</li><li>CesiumJS</li><li>Node.js</li><li>Python</li><li>Docker</li>
+        </ul>
+        <footer>
+          <span class="private">Source available on request</span>
+        </footer>
+      </article>
+
+      <!-- Our Solar System -->
+      <article class="project" data-tags="web 3d">
+        <header>
+          <h3>Our Solar System <span class="sub">Interactive 3D solar system explorer</span></h3>
+          <p class="when">Oct 2026</p>
+        </header>
+        <ul class="points">
+          <li>Built an interactive 3D model of the solar system in React and Three.js, with the Sun, planets, 465 moons, 250 spacecraft, 68,919 asteroids and 3,906 comets, and a timeline from 1600 to 2500.</li>
+          <li>Calculated planet positions with Astronomy Engine, and loaded other objects from NASA/JPL Horizons through a caching API.</li>
+          <li>Added smooth camera flights, moon-system close-ups and search across every catalogue.</li>
+          <li>Deployed the online version to Cloudflare Pages, with Pages Functions and an R2 cache.</li>
+        </ul>
+        <ul class="stack">
+          <li>React</li><li>Three.js</li><li>JavaScript</li><li>Node.js</li><li>Astronomy Engine</li><li>Cloudflare Pages Functions</li><li>R2</li>
+        </ul>
+        <footer>
+          <a class="live" href="https://our-solar-system.pages.dev">Live site</a>
+        </footer>
+      </article>
+
+      <!-- Forma / AcupunctureVision -->
+      <article class="project" data-tags="web 3d">
+        <header>
+          <h3>Acupuncture Vision <span class="sub">3D human anatomy atlas</span></h3>
+          <p class="when">Oct 2026</p>
+        </header>
+        <ul class="points">
+          <li>Built a 3D anatomy atlas in React, TypeScript and React Three Fiber, with 208 skeletal and 570 muscular structures across eight body regions.</li>
+          <li>Loads each region's meshes only when needed, optimised with glTF-Transform, and uses BVH acceleration so selecting a structure stays fast.</li>
+          <li>Wrote 307 muscle profiles (origin, insertion, action, innervation) and 222 cited learning profiles. Added search across 778 entries, quizzes and bookmarks.</li>
+          <li>Automated tests decode every mesh and check its anatomical bounds, IDs, triangle counts and source coverage.</li>
+        </ul>
+        <ul class="stack">
+          <li>React</li><li>TypeScript</li><li>Three.js</li><li>React Three Fiber</li><li>Zustand</li><li>glTF-Transform</li><li>Blender</li>
+        </ul>
+        <footer>
+          <a class="live" href="https://acupuncture-vision.pages.dev/">Live site</a>
+        </footer>
+      </article>
+
+      <!-- FlashyCards -->
+      <article class="project" data-tags="mobile">
+        <header>
+          <h3>FlashyCards <span class="sub">Offline flashcard app for iPhone</span></h3>
+          <p class="when">Mar – Nov 2026</p>
+        </header>
+        <ul class="points">
+          <li>Built an offline flashcard app in Expo and React Native, with SQLite storage and FSRS spaced-repetition scheduling.</li>
+          <li>Wrote a native Swift module that imports Anki decks (.apkg) on the device, including Anki's newer Zstandard-compressed format, and passes them to a TypeScript import pipeline.</li>
+          <li>Displays rich HTML cards with images, audio and each deck's own styling. Added nested decks, per-deck study settings, card creation with photos and voice recordings, search, and a statistics dashboard.</li>
+          <li>Keeps study history when a deck is imported again, and backs up and restores all data to a file.</li>
+        </ul>
+        <ul class="stack">
+          <li>React Native</li><li>Expo</li><li>TypeScript</li><li>Swift</li><li>SQLite</li><li>FSRS</li><li>Vitest</li>
+        </ul>
+        <footer>
+          <a class="live" href="https://quantumarc.github.io/flashycards-site/">Support site</a>
+        </footer>
+      </article>
+
+      <!-- Starlingo Web -->
+      <article class="project" data-tags="web">
+        <header>
+          <h3>Starlingo Web <span class="sub">Vedic and Western astrology charts</span></h3>
+          <p class="when">Jul – Nov 2026</p>
+        </header>
+        <ul class="points">
+          <li>Built an astrology web app in Next.js and TypeScript, adapted from the calculation engine of the Starlingo mobile app.</li>
+          <li>Calculates sidereal and tropical birth charts with Astronomy Engine: planet positions, nakshatras, houses, retrograde motion, divisional charts D1–D60, Vimshottari periods, aspects and current transits.</li>
+          <li>Finds birth locations through OpenStreetMap search with time-zone lookup, keeps birth data in the browser, and deploys to Netlify.</li>
+        </ul>
+        <ul class="stack">
+          <li>Next.js</li><li>React</li><li>TypeScript</li><li>Tailwind CSS</li><li>Astronomy Engine</li><li>Netlify</li>
+        </ul>
+        <footer>
+          <a class="live" href="https://starlingo.netlify.app/">Live site</a>
+        </footer>
+      </article>
+
+      <!-- KanjiTriangle -->
+      <article class="project" data-tags="web">
+        <header>
+          <h3>KanjiTriangle <span class="sub">Kanji study app with stroke-order animation</span></h3>
+          <p class="when">Aug – Sep 2026</p>
+        </header>
+        <ul class="points">
+          <li>Built a React web app for studying the 2,200 kanji in Heisig's <i>Remembering the Kanji</i>, searchable by their component radicals, with readings and example words.</li>
+          <li>Animated stroke order from KanjiVG SVG data, and fixed stalled animations by filtering invalid paths and adding a timeout fallback for browser transition events.</li>
+          <li>Added JLPT and school-grade filters, a mnemonic stories tab, and progress tracking against a daily target. Deployed on Cloudflare Workers.</li>
+        </ul>
+        <ul class="stack">
+          <li>React</li><li>JavaScript</li><li>Vite</li><li>SVG</li><li>Cloudflare Workers</li>
+        </ul>
+        <footer>
+          <a class="live" href="https://kanjitriangle.quantumarc988.workers.dev/">Live site</a>
+        </footer>
+      </article>
+
+      <p class="empty" hidden>No projects in this category.</p>
+    </section>
+  </main>
+
+  <footer class="site-foot">
+    <div class="wrap">
+      <p>© 2026 James Tran · <a href="https://github.com/quantumArc">github.com/quantumArc</a></p>
+    </div>
+  </footer>
+
+  <script>
+    // Filter chips
+    const chips = document.querySelectorAll('.chip');
+    const projects = document.querySelectorAll('.project');
+    const empty = document.querySelector('.empty');
+    chips.forEach(chip => chip.addEventListener('click', () => {
+      const f = chip.dataset.filter;
+      chips.forEach(c => { const on = c === chip; c.classList.toggle('is-on', on); c.setAttribute('aria-pressed', on); });
+      let shown = 0;
+      projects.forEach(p => {
+        const show = f === 'all' || p.dataset.tags.split(' ').includes(f);
+        p.hidden = !show; if (show) shown++;
+      });
+      empty.hidden = shown > 0;
+    }));
+  </script>
+</body>
+</html>
