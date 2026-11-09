@@ -42,7 +42,7 @@
         <div><dt>3D &amp; graphics</dt><dd>Three.js, React Three Fiber, CesiumJS, Canvas, SVG, WebGPU</dd></div>
         <div><dt>AI / ML</dt><dd>ONNX Runtime, KataGo, llama.cpp, Whisper, Qwen3-ASR, Gemma</dd></div>
         <div><dt>Back end &amp; data</dt><dd>Node.js, Express, PostgreSQL, SQLite, WebSockets, REST APIs</dd></div>
-        <div><dt>Desktop &amp; deploy</dt><dd>Tauri, PyInstaller, Docker, GitHub Actions, Cloudflare, Netlify, Vercel</dd></div>
+        <div><dt>Desktop &amp; deploy</dt><dd>Oracle Cloud, Linux servers, Caddy, Docker, GitHub Actions, Cloudflare, Netlify, Vercel, Tauri</dd></div>
       </dl>
     </section>
 
@@ -116,6 +116,27 @@
         </ul>
         <footer>
           <a class="live" href="https://aji-go.pages.dev">Live site</a>
+        </footer>
+      </article>
+
+      <!-- Nestegg -->
+      <article class="project" data-tags="web">
+        <header>
+          <h3>Nestegg <span class="sub">Shared budgeting web app</span></h3>
+          <p class="when">Nov 2026</p>
+        </header>
+        <ul class="points">
+          <li>Built a budgeting app for tracking spending and income alone or together: partners or housemates join a shared budget with an invite code or link, with owner, editor and viewer roles.</li>
+          <li>Dashboards built with Chart.js show cash flow, category spending, budget health and spending pace, and refresh when a partner adds an entry. Supports several budgets per person, each in its own currency.</li>
+          <li>A "Try the demo" button gives each visitor a private sandbox with a year of sample data, deleted automatically after 24 hours.</li>
+          <li>Secured with scrypt password hashing, HttpOnly session cookies, membership and role checks on every request, and rate limiting.</li>
+          <li>Set up and run the production server myself on Oracle Cloud (Ubuntu): Caddy for automatic HTTPS, a systemd service under a dedicated account, firewall rules, daily SQLite backups, and a one-step update script that backs up, deploys, restarts and health-checks the site.</li>
+        </ul>
+        <ul class="stack">
+          <li>Node.js</li><li>Express</li><li>SQLite</li><li>JavaScript</li><li>Chart.js</li><li>Oracle Cloud (OCI)</li><li>Ubuntu</li><li>Caddy</li>
+        </ul>
+        <footer>
+          <a class="live" href="https://ournestegg.duckdns.org">Live site</a>
         </footer>
       </article>
 
